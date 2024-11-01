@@ -1,37 +1,80 @@
 * {
-  margin: 12;
+  margin: 0;
   padding: 0;
 }
 
-body {
-  background-color: rgb(240, 237, 54);
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  --primary: #ffd700;
 }
 
-h1 {
-  color: rgb(0, 0, 0);
+body {
+  background-color: var(--primary);
+  text-align: center;
+  font-family: "Oswald", sans-serif;
 }
+
+/* nav */
+.container-nav {
+  background-color: var(--primary);
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99999;
+}
+
+.logo {
+  margin-bottom: 15px;
+  font-size: 2.5em;
+  letter-spacing: 3px;
+}
+
+.logo span {
+  color: var(--primary);
+  -webkit-text-stroke: 1px black;
+}
+
+.nav-item ul {
+  margin: auto;
+  width: 850px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+.nav-item li {
+  list-style: none;
+}
+
+.nav-item li a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+}
+/* akhir nav */
 
 /* header */
-header .overlay h1 {
-  color: white;
-  text-transform: uppercase;
-  font-size: 55px;
-}
-
 header {
+  margin-top: 140px;
   color: white;
   background-image: url(img/zenitsu.png);
   background-size: cover;
-  height: 450px;
+  background-position: center;
+  height: 650px;
   border-radius: 4px;
   overflow: hidden;
 }
 
 header .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center;
+  justify-items: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
@@ -40,41 +83,67 @@ header .overlay {
   box-sizing: border-box;
 }
 
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+header .overlay h1 {
+  margin: auto;
+  margin-bottom: 0;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  size: 600px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 120px;
 }
 
-.section {
+header .overlay p {
+  margin: 0 70px;
+}
+
+header .button-hero {
+  font-size: 25px;
+  width: 220px;
+  height: 50px;
+  margin-top: 20px;
+  border: 3px solid var(--primary);
+  font-weight: 600;
+  color: var(--primary);
+}
+
+header .button-hero:hover {
+  background-color: var(--primary);
+  color: black;
+}
+
+.slide {
   position: absolute;
   bottom: 0;
-  width: 200px;
-  height: 34px;
-  background-color: rgb(240, 237, 54);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  width: 400px;
+  height: 54px;
+  background-color: var(--primary);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
+/* akhir header */
 
-/* menu */
-.container {
+/* section */
+.container-section {
   width: 95%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 50px;
   padding: 30px;
   box-sizing: border-box;
   display: grid;
   grid-template-areas:
-    "prev-1 desk-1 "
-    "desk-2 prev-2";
+    "prev-1 prev-2 "
+    "desk-1 desk-2";
   justify-items: center;
   align-items: center;
+  gap: 6px;
 }
 
 .prev {
-  width: 600px;
-  border-radius: 8px;
+  max-width: 700px;
+  max-height: 450px;
   overflow: hidden;
 }
 
@@ -102,3 +171,216 @@ header .overlay {
 .desk-2 {
   grid-area: desk-2;
 }
+
+.container h1 {
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 50px;
+}
+/* akhir section */
+
+/* button */
+.button {
+  font-size: 20px;
+  width: 220px;
+  height: 50px;
+  line-height: 50px;
+  border: 3px solid black;
+  font-weight: 800;
+  margin: auto;
+}
+
+.button a {
+  color: black;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: black;
+}
+
+.button:hover a {
+  color: var(--primary);
+}
+/* akhir button */
+
+/* menu */
+.container-menu {
+  width: 100%;
+  margin: auto;
+  margin-top: 70px;
+  margin-bottom: 60px;
+  padding: 30px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  grid-template-rows: repeat(2 300px);
+  align-items: center;
+}
+
+.menu {
+  max-width: auto;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.menu img {
+  width: 100%;
+}
+
+.menu-1 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.menu-1 img {
+  height: 700px;
+}
+
+.menu-2 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.menu-deks-1,
+.menu-deks-2 {
+  text-align: center;
+  font-size: 22px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+/* akhir menu */
+
+/* catalog */
+.catalog {
+  width: 100%;
+  height: 80px;
+  background-color: black;
+}
+
+.catalog a {
+  line-height: 80px;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: larger;
+}
+
+.consent-preference {
+  padding: 10px;
+}
+
+.consent-preference a {
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: lighter;
+  text-decoration: none;
+  color: black;
+}
+/* akhir catalog */
+
+/* footer */
+footer {
+  box-sizing: border-box;
+  padding: 0 25px;
+  height: 50px;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.media {
+  display: flex;
+  gap: 10px;
+}
+
+.media,
+.items {
+  margin-top: 10px;
+}
+
+.media a {
+  display: block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+.media a i {
+  line-height: 35px;
+  color: black;
+  font-size: 20px;
+}
+
+.items {
+  margin-left: auto;
+}
+
+.items ul {
+  width: 900px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+.items li {
+  list-style: none;
+}
+
+.items li a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.items .button {
+  border: 3px solid var(--primary);
+  padding: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: 600;
+}
+
+.items .button:hover {
+  background-color: var(--primary);
+}
+
+.items .button:hover a {
+  color: black;
+}
+
+.credit {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+}
+
+.credit a {
+  letter-spacing: 3px;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: small;
+  font-weight: lighter;
+  line-height: 50px;
+}
+
+.media .facebook:hover,
+.media .instagram:hover {
+  background-color: white;
+}
+
+.media .facebook:hover i {
+  color: blue;
+}
+
+.media .instagram:hover i {
+  color: red;
+}
+/* akhir footer */
