@@ -22,13 +22,18 @@ body {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 99999;
+  z-index: 99;
 }
 
 .logo {
   margin-bottom: 15px;
   font-size: 2.5em;
   letter-spacing: 3px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: black;
 }
 
 .logo span {
@@ -45,14 +50,41 @@ body {
 }
 
 .nav-item li {
+  position: relative;
   list-style: none;
+  padding: 0 10px;
+  cursor: pointer;
 }
 
-.nav-item li a {
+.nav-item .item-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background-color: black;
+  z-index: -1;
+  transition: all 0.3s;
+}
+
+.nav-item a {
   text-decoration: none;
   color: black;
   font-size: 20px;
   font-weight: bolder;
+}
+
+.nav-item .item-mark {
+  border: 3px solid black;
+  padding: 10px;
+}
+
+.nav-item li:hover .item-overlay {
+  width: 100%;
+}
+
+.nav-item li:hover a {
+  color: var(--primary);
 }
 /* akhir nav */
 
@@ -60,7 +92,7 @@ body {
 header {
   margin-top: 140px;
   color: white;
-  background-image: url(img/zenitsu.png);
+  background-image: url(img/hero.jpeg);
   background-size: cover;
   background-position: center;
   height: 650px;
@@ -135,7 +167,9 @@ header .button-hero:hover {
   display: grid;
   grid-template-areas:
     "prev-1 prev-2 "
-    "desk-1 desk-2";
+    "title-1 title-2"
+    "desk-1 desk-2"
+    "button-1 button-2";
   justify-items: center;
   align-items: center;
   gap: 6px;
@@ -164,12 +198,28 @@ header .button-hero:hover {
   grid-area: prev-2;
 }
 
+.title-prev-1 {
+  grid-area: title-1;
+}
+
+.title-prev-2 {
+  grid-area: title-2;
+}
+
 .desk-1 {
   grid-area: desk-1;
 }
 
 .desk-2 {
   grid-area: desk-2;
+}
+
+.button-prev-1 {
+  grid-area: button-1;
+}
+
+.button-prev-2 {
+  grid-area: button-2;
 }
 
 .container h1 {
@@ -254,6 +304,10 @@ header .button-hero:hover {
   font-size: 22px;
   padding-left: 100px;
   padding-right: 100px;
+}
+
+.button-menu {
+  margin-top: 20px;
 }
 /* akhir menu */
 
